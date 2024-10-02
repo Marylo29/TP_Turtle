@@ -4,17 +4,23 @@ t = turtle.Turtle()
 t.speed(0) # maximum speed
 
 def equilateral(longueur):
-    for i in range(3):
-        t.forward(longueur)
-        t.left(120)
+    polygone(longueur,3)
 
 
-equilateral(200)
+
 
 def carre(longueur):
-    for i in range(4):
-        t.forward(longueur)
-        t.left(90)
+    polygone(longueur,4)
 
+
+
+def polygone(longueur,nb_cotes):
+    for i in range(nb_cotes):
+        t.forward(longueur)
+        t.left(360/nb_cotes)
+        
+equilateral(200)
 carre(200)
+polygone(100,5)
+polygone(200,5)
 turtle.exitonclick()
