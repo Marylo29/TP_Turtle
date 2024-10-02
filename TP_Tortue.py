@@ -6,21 +6,23 @@ t.speed(0) # maximum speed
 def equilateral(longueur):
     polygone(longueur,3)
 
-
-
-
 def carre(longueur):
     polygone(longueur,4)
 
 
-
-def polygone(longueur,nb_cotes):
-    for i in range(nb_cotes):
+def polygone(longueur,nb_cotes,ajout=0,deviation=0):
+    angle = (360/nb_cotes) - deviation
+    for _ in range(nb_cotes):
+        longueur += ajout
         t.forward(longueur)
-        t.left(360/nb_cotes)
-        
-equilateral(200)
-carre(200)
-polygone(100,5)
-polygone(200,5)
+        t.left(angle)
+def figure1():
+    polygone(2,150,3,-86.3)
+
+def figure2():
+    for i in range(0,200,5):
+        polygone(10+i,4)
+
+figure2()
+
 turtle.exitonclick()
