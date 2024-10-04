@@ -15,13 +15,19 @@ def polygone(longueur,nb_cotes,ajout=0,deviation=0):
     for _ in range(nb_cotes):
         longueur += ajout
         t.forward(longueur)
-        t.left(angle)
+        t.right(angle)
+
 def figure1():
     polygone(2,150,3,-86.3)
 
 def figure2():
-    for i in range(0,200,5):
-        polygone(10+i,4)
+    longueur = 2
+    for _ in range(100):
+        carre(longueur)
+        t.right(10)
+        longueur += 2
+
+
 
 figure2()
 
