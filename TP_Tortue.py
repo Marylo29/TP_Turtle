@@ -34,6 +34,6 @@ def figure2():
 
 
 
-figure1()
+figure2()
 
 turtle.exitonclick()
